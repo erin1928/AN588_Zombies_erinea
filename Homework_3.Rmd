@@ -39,3 +39,14 @@ mean_age
 mean_killed <- mean(killed)
 mean(killed)
 ```
+
+## Problem 2
+```{r boxplot, include=TRUE}
+library(ggplot2)
+box_plot <- ggplot(data = zombie_data, aes(x = Gender, y = (mean_age)))
+box_plot <- box_plot + geom_boxplot()
+box_plot <- box_plot + theme(axis.text.x = element_text(angle = 90))
+box_plot <- box_plot + ylab("(Mean_Age)")
+box_plot
+```
+# I'm not sure why my bpx plot doesn't have bars and is so small
