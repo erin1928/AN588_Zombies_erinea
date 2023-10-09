@@ -1,0 +1,33 @@
+---
+title: "erinea_OriginalHomeworkCode_03"
+author: "Erin Anderson"
+date: "`r Sys.Date()`"
+output: 
+  rmdformats::readthedown:
+    self_contained: true
+    thumbnails: true
+    lightbox: true
+    gallery: false
+    highlight: tango
+  
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r import csv, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+zombie_data <- read.csv("~/Desktop/zombies.csv", sep = ",", header = TRUE, stringsAsFactors = FALSE)
+```
+
+## Problem 1
+```{r read csv, include=TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+zombie_data
+height <- zombie_data[["height"]]
+weight <- zombie_data[["weight"]]
+killed <- zombie_data[["zombies_killed"]]
+age <- zombie_data[["age"]]
+years_of_education <- zombie_data[["years_of_education"]]
+```
