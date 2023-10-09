@@ -30,4 +30,12 @@ weight <- zombie_data[["weight"]]
 killed <- zombie_data[["zombies_killed"]]
 age <- zombie_data[["age"]]
 years_of_education <- zombie_data[["years_of_education"]]
+mean_height <- mean(height)
+mean_height
+mean_weight <- mean(weight)
+mean_weight
+mean_age <- mean(age)
+mean_age
+mean_killed <- mean(killed)
+mean(killed)
 ```
