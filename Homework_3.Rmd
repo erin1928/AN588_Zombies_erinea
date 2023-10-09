@@ -71,3 +71,43 @@ box_plot <- box_plot + theme(axis.text.x = element_text(angle = 90))
 box_plot <- box_plot + ylab("Age") + xlab("Gender")
 box_plot
 ```
+
+## Problem 2: Weight
+```{r boxplot of weight, include=TRUE}
+library(ggplot2)
+box_plot_2 <- ggplot(data = zombie_data, aes(x = gender, y = (weight)))
+box_plot_2 <- box_plot_2 + geom_boxplot()
+box_plot_2 <- box_plot_2 + theme(axis.text.x = element_text(angle = 90))
+box_plot_2 <- box_plot_2 + ylab("Weight") + xlab("Gender")
+box_plot_2
+```
+
+## Problem 2: Height
+```{r boxplot of height, include=TRUE}
+library(ggplot2)
+box_plot_3 <- ggplot(data = zombie_data, aes(x = gender, y = (height)))
+box_plot_3 <- box_plot_3 + geom_boxplot()
+box_plot_3 <- box_plot_3 + theme(axis.text.x = element_text(angle = 90))
+box_plot_3 <- box_plot_3 + ylab("Height") + xlab("Gender")
+box_plot_3
+```
+
+## Problem 2: Zombies Killed
+```{r boxplot of kiled, include=TRUE}
+library(ggplot2)
+box_plot_4 <- ggplot(data = zombie_data, aes(x = gender, y = (killed)))
+box_plot_4 <- box_plot_4 + geom_boxplot()
+box_plot_4 <- box_plot_4 + theme(axis.text.x = element_text(angle = 90))
+box_plot_4 <- box_plot_4 + ylab("Zombies Killed") + xlab("Gender")
+box_plot_4
+```
+
+## Problem 2: Years of Education
+```{r boxplot of years, include=TRUE}
+library(ggplot2)
+box_plot_5 <- ggplot(data = zombie_data, aes(x = gender, y = (years_of_education)))
+box_plot_5 <- box_plot_5 + geom_boxplot()
+box_plot_5 <- box_plot_5 + theme(axis.text.x = element_text(angle = 90))
+box_plot_5 <- box_plot_5 + ylab("Years of Education") + xlab("Gender")
+box_plot_5
+```
