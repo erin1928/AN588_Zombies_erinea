@@ -21,7 +21,7 @@ knitr::opts_chunk$set(echo = TRUE)
 zombie_data <- read.csv("~/Desktop/zombies.csv", sep = ",", header = TRUE, stringsAsFactors = FALSE)
 ```
 
-## Problem 1
+## Problem 1: Means
 ```{r read csv, include=TRUE}
 knitr::opts_chunk$set(echo = TRUE)
 zombie_data
@@ -38,15 +38,35 @@ mean_age <- mean(age)
 mean_age
 mean_killed <- mean(killed)
 mean(killed)
+mean_years_of_education <- mean(years_of_education)
+mean_years_of_education
 ```
 
-## Problem 2
-```{r boxplot, include=TRUE}
+## Problem 1: Standard Deviations
+```{r boxplot of age, include=TRUE}
+sum_squared_diff_age <- sum((age - mean_age)^2)
+population_sd_age <- sqrt(sum_squared_diff_age / length(age))
+population_sd_age
+sum_squared_diff_weight <- sum((weight - mean_weight)^2)
+population_sd_weight <- sqrt(sum_squared_diff_weight / length(weight))
+population_sd_weight
+sum_squared_diff_height <- sum((height - mean_height)^2)
+population_sd_height <- sqrt(sum_squared_diff_height / length(height))
+population_sd_height
+sum_squared_diff_killed <- sum((killed - mean_killed)^2)
+population_sd_killed <- sqrt(sum_squared_diff_killed / length(killed))
+population_sd_killed
+sum_squared_diff_years <- sum((years_of_education - mean_years_of_education)^2)
+population_sd_years <- sqrt(sum_squared_diff_years / length(years_of_education))
+population_sd_years
+```
+
+## Problem 2: Age
+```{r boxplot of age, include=TRUE}
 library(ggplot2)
-box_plot <- ggplot(data = zombie_data, aes(x = Gender, y = (mean_age)))
+box_plot <- ggplot(data = zombie_data, aes(x = gender, y = (age)))
 box_plot <- box_plot + geom_boxplot()
 box_plot <- box_plot + theme(axis.text.x = element_text(angle = 90))
-box_plot <- box_plot + ylab("(Mean_Age)")
+box_plot <- box_plot + ylab("Age") + xlab("Gender")
 box_plot
 ```
-# I'm not sure why my bpx plot doesn't have bars and is so small
