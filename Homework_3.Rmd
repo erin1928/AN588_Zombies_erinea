@@ -139,24 +139,24 @@ scatterplot_3
 
 ## Problem 4: Age
 ```{r histogram 1, include=TRUE}
-hist_age <- hist(age, probability = TRUE, main = "Age",
-    xlab = "Age", ylab = "probability", xlim = c(10,30))
+hist_age <- hist(age, main = "Age",
+    xlab = "Age", xlim = c(10,30))
 hist_age
 ```
 
 ```{r histogram 2, include=TRUE}
-hist_weight <- hist(weight, probability = TRUE, main = "Weight",
-    xlab = "Weight", ylab = "probability", xlim = c(100,250))
+hist_weight <- hist(weight, main = "Weight",
+    xlab = "Weight", xlim = c(100,250))
 hist_weight
 ```
 ```{r histogram 3, include=TRUE}
-hist_killed <- hist(killed, probability = TRUE, main = "Killed",
-    xlab = "Killed", ylab = "probability", xlim = c(0,12))
+hist_killed <- hist(killed, main = "Killed",
+    xlab = "Killed", xlim = c(0,12))
 hist_killed
 ```
 ```{r histogram 4, include=TRUE}
-hist_years <- hist(years_of_education, probability = TRUE, main = "Years of Education",
-    xlab = "Years of Education", ylab = "probability", xlim = c(0,10))
+hist_years <- hist(years_of_education, main = "Years of Education",
+    xlab = "Years of Education", xlim = c(0,10))
 hist_years
 ```
 
