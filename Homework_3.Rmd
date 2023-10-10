@@ -144,8 +144,8 @@ hist_age <- hist(age, main = "Age",
 hist_age
 ```
 ```{r qqplot 1, include=TRUE}
-qq_age <- qqnorm(age, pch = 1, frame = FALSE)
-qq_age
+qqnorm(zombie_data$age, main = "Q-Q Plot of Age")
+qqline(zombie_data$age, col = "red")
 
 ```
 
@@ -155,14 +155,29 @@ hist_weight <- hist(weight, main = "Weight",
     xlab = "Weight", xlim = c(100,250))
 hist_weight
 ```
+```{r qqplot 2, include=TRUE}
+qqnorm(zombie_data$weight, main = "Q-Q Plot of Weight")
+qqline(zombie_data$weight, col = "red")
+
+```
+
 ```{r histogram 3, include=TRUE}
-hist_killed <- hist(killed, main = "Killed",
-    xlab = "Killed", xlim = c(0,12))
+hist_killed <- hist(killed, main = " Zombies Killed",
+    xlab = "Zombies Killed", xlim = c(0,12))
 hist_killed
+```
+```{r qqplot 3, include=TRUE}
+qqnorm(zombie_data$zombies_killed, main = "Q-Q Plot of Zombies Killed")
+qqline(zombie_data$zombies_killed, col = "red")
 ```
 ```{r histogram 4, include=TRUE}
 hist_years <- hist(years_of_education, main = "Years of Education",
     xlab = "Years of Education", xlim = c(0,10))
 hist_years
+```
+```{r qqplot 4, include=TRUE}
+qqnorm(zombie_data$years_of_education, main = "Q-Q Plot of Age")
+qqline(zombie_data$years_of_education, col = "blue")
+
 ```
 
