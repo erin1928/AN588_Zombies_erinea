@@ -136,3 +136,8 @@ scatterplot_3 <- scatterplot_3 + geom_point()
 scatterplot_3 <- scatterplot_3 + geom_smooth(method = "lm")
 scatterplot_3
 ```
+
+## Problem 4: Age
+```{r histogram 1, include=TRUE}
+
+```
