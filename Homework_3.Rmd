@@ -154,4 +154,9 @@ hist_killed <- hist(killed, probability = TRUE, main = "Killed",
     xlab = "Killed", ylab = "probability", xlim = c(0,12))
 hist_killed
 ```
+```{r histogram 4, include=TRUE}
+hist_years <- hist(years_of_education, probability = TRUE, main = "Years of Education",
+    xlab = "Years of Education", ylab = "probability", xlim = c(0,10))
+hist_years
+```
 
