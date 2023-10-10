@@ -21,12 +21,12 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r import csv, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 zombie_data <- read.csv("~/Desktop/zombies.csv", sep = ",", header = TRUE, stringsAsFactors = FALSE)
+zombie_data
 ```
 
 ## Problem 1: Means
 ```{r read csv, include=TRUE}
 knitr::opts_chunk$set(echo = TRUE)
-zombie_data
 height <- zombie_data[["height"]]
 weight <- zombie_data[["weight"]]
 killed <- zombie_data[["zombies_killed"]]
