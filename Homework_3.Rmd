@@ -112,3 +112,27 @@ box_plot_5 <- box_plot_5 + theme(axis.text.x = element_text(angle = 90))
 box_plot_5 <- box_plot_5 + ylab("Years of Education") + xlab("Gender")
 box_plot_5
 ```
+
+## Problem 3: Height and Age
+```{r scatterplot 1, include=TRUE}
+scatterplot <- ggplot(data = zombie_data, aes(x = age, y = height))
+scatterplot <- scatterplot + geom_point()
+scatterplot <- scatterplot + geom_smooth(method = "lm")
+scatterplot
+```
+
+## Problem 3: Weight and Age
+```{r scatterplot 2, include=TRUE}
+scatterplot_2 <- ggplot(data = zombie_data, aes(x = age, y = weight))
+scatterplot_2 <- scatterplot_2 + geom_point()
+scatterplot_2 <- scatterplot_2 + geom_smooth(method = "lm")
+scatterplot_2
+```
+
+## Problem 3: Weight and Height
+```{r scatterplot 3, include=TRUE}
+scatterplot_3 <- ggplot(data = zombie_data, aes(x = age, y = weight))
+scatterplot_3 <- scatterplot_3 + geom_point()
+scatterplot_3 <- scatterplot_3 + geom_smooth(method = "lm")
+scatterplot_3
+```
