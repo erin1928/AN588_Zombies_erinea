@@ -143,6 +143,12 @@ hist_age <- hist(age, main = "Age",
     xlab = "Age", xlim = c(10,30))
 hist_age
 ```
+```{r qqplot 1, include=TRUE}
+qq_age <- qqnorm(age, pch = 1, frame = FALSE)
+qq_age
+
+```
+
 
 ```{r histogram 2, include=TRUE}
 hist_weight <- hist(weight, main = "Weight",
