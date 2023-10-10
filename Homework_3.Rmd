@@ -149,7 +149,7 @@ qqline(zombie_data$age, col = "red")
 
 ```
 
-
+## Problem 4: Weight
 ```{r histogram 2, include=TRUE}
 hist_weight <- hist(weight, main = "Weight",
     xlab = "Weight", xlim = c(100,250))
@@ -161,6 +161,7 @@ qqline(zombie_data$weight, col = "red")
 
 ```
 
+## Problem 4: Zombies Killed
 ```{r histogram 3, include=TRUE}
 hist_killed <- hist(killed, main = " Zombies Killed",
     xlab = "Zombies Killed", xlim = c(0,12))
@@ -170,14 +171,34 @@ hist_killed
 qqnorm(zombie_data$zombies_killed, main = "Q-Q Plot of Zombies Killed")
 qqline(zombie_data$zombies_killed, col = "red")
 ```
+## Problem 4: Years of Education
 ```{r histogram 4, include=TRUE}
 hist_years <- hist(years_of_education, main = "Years of Education",
     xlab = "Years of Education", xlim = c(0,10))
 hist_years
 ```
 ```{r qqplot 4, include=TRUE}
-qqnorm(zombie_data$years_of_education, main = "Q-Q Plot of Age")
-qqline(zombie_data$years_of_education, col = "blue")
+qqnorm(zombie_data$years_of_education, main = "Q-Q Plot of Years of Education")
+qqline(zombie_data$years_of_education, col = "red")
 
 ```
+## Problem 4: Height
+```{r histogram 5, include=TRUE}
+hist_height <- hist(height, main = "Height",
+    xlab = "Height", xlim = c(50,90))
+hist_height
+```
 
+```{r ggplot 5, include=TRUE}
+qqnorm(zombie_data$height, main = "Q-Q Plot of Years of Height")
+qqline(zombie_data$height, col = "red")
+```
+## Problem 5
+```{r sample 30, include=TRUE}
+sample_30 <- function(x) {
+    sample(1:30, zombie_data$age, replace = TRUE)
+}
+sample_30
+mean_sample <- mean(sample_30)
+mean_sample
+```
