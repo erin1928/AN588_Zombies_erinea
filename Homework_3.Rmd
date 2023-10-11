@@ -15,6 +15,12 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+## Challenges
+
+I had a more difficult time with this homework than the last two. Particularly I struggled with Q5 and Q6 as I was having trouble understanding the difference between population and sample standard deviation and mean. I also struggled with including my past sample in the collection of 99 new samples in Q6 and although I worked out the problem, I think there are more efficient ways of doing the same task.
+
+I also struggled with calculating the standard deviation of the population as a whole without the sd() command. Once again I was able to resolve my issue, but think that there is a better way to go about it. I also think I used too many variables as I got lost sometimes remembering which ones to call for specific problems.
+
 
 ```{r import csv, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
