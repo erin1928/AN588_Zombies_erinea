@@ -193,12 +193,14 @@ hist_height
 qqnorm(zombie_data$height, main = "Q-Q Plot of Years of Height")
 qqline(zombie_data$height, col = "red")
 ```
-## Problem 5
+## Problem 5: Height
 ```{r sample 30, include=TRUE}
-sample_30 <- function(x) {
-    sample(1:30, zombie_data$age, replace = TRUE)
-}
-sample_30
-mean_sample <- mean(sample_30)
-mean_sample
+sample_height <- sample(height, 30, replace = FALSE)
+mean(sample_height)
+standard_dev_height <- sd(sample_height)
+height_sample_stand_error <- standard_dev_height/sqrt(30)
+lower <- mean_height - qnorm(1 - 0.05/2) * height_sample_stand_error
+upper <- mean_height + qnorm(1 - 0.05/2) * height_sample_stand_error 
+ci_height <- c(lower, upper)
+ci_height
 ```
