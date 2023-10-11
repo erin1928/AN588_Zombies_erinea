@@ -10,8 +10,6 @@ output:
     gallery: false
     highlight: tango
   
-
-  
 ---
 
 ```{r setup, include=FALSE}
