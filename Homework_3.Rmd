@@ -12,6 +12,7 @@ output:
   
 ---
 
+!["PLANTS VS. ZOMBIES!!"](/Users/erin/desktop/Newspaper_Zombie.png)
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
