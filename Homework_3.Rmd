@@ -196,7 +196,9 @@ qqline(zombie_data$height, col = "red")
 sample_height <- sample(height, 30, replace = FALSE)
 mean(sample_height)
 standard_dev_height <- sd(sample_height)
+standard_dev_height
 height_sample_stand_error <- standard_dev_height/sqrt(30)
+height_sample_stand_error
 lower <- mean_height - qnorm(1 - 0.05/2) * height_sample_stand_error
 upper <- mean_height + qnorm(1 - 0.05/2) * height_sample_stand_error 
 ci_height <- c(lower, upper)
@@ -208,7 +210,9 @@ ci_height
 sample_weight <- sample(weight, 30, replace = FALSE)
 mean(sample_weight)
 standard_dev_weight <- sd(sample_weight)
+standard_dev_weight
 weight_sample_stand_error <- standard_dev_weight/sqrt(30)
+weight_sample_stand_error
 lower_weight <- mean_weight - qnorm(1 - 0.05/2) * weight_sample_stand_error
 upper_weight <- mean_weight + qnorm(1 - 0.05/2) * weight_sample_stand_error 
 ci_weight <- c(lower_weight, upper_weight)
@@ -220,7 +224,9 @@ ci_weight
 sample_age <- sample(age, 30, replace = FALSE)
 mean(sample_age)
 standard_dev_age <- sd(sample_age)
+standard_dev_age
 age_sample_stand_error <- standard_dev_age/sqrt(30)
+age_sample_stand_error
 lower_age <- mean_age - qnorm(1 - 0.05/2) * age_sample_stand_error
 upper_age <- mean_age + qnorm(1 - 0.05/2) * age_sample_stand_error 
 ci_age <- c(lower_age, upper_age)
@@ -232,7 +238,9 @@ ci_age
 sample_killed <- sample(killed, 30, replace = FALSE)
 mean(sample_killed)
 standard_dev_killed <- sd(sample_killed)
+standard_dev_killed
 killed_sample_stand_error <- standard_dev_killed/sqrt(30)
+killed_sample_stand_error
 lower_killed <- mean_killed - qnorm(1 - 0.05/2) * killed_sample_stand_error
 upper_killed <- mean_killed + qnorm(1 - 0.05/2) * killed_sample_stand_error 
 ci_killed <- c(lower_killed, upper_killed)
@@ -244,9 +252,68 @@ ci_killed
 sample_years <- sample(years_of_education, 30, replace = FALSE)
 mean(sample_years)
 standard_dev_years <- sd(sample_years)
+standard_dev_years
 years_sample_stand_error <- standard_dev_years/sqrt(30)
+years_sample_stand_error
 lower_years <- mean_years_of_education - qnorm(1 - 0.05/2) * years_sample_stand_error
 upper_years <- mean_years_of_education + qnorm(1 - 0.05/2) * years_sample_stand_error 
 ci_years <- c(lower_years, upper_years)
 ci_years
+```
+
+## Problem 6: Height
+```{r 100 random samples - height, include=TRUE}
+height_99 <- NULL
+for (i in 1:99) {
+    height_99[i] <- mean(sample(height, 30, replace = FALSE))
+}
+all_100 <- height_99 + mean(sample_height)
+mean(all_100)
+sd(all_100)
+
+#I'm not sure how to best include the past sample
+```
+
+## Problem 6: Weight
+```{r 100 random samples -weight, include=TRUE}
+weight_99 <- NULL
+for (i in 1:99) {
+    weight_99[i] <- mean(sample(weight, 30, replace = FALSE))
+}
+all_100_w <- weight_99 + mean(sample_weight)
+mean(all_100_w)
+sd(all_100_w)
+```
+
+## Problem 6: Age
+```{r 100 random samples - age, include=TRUE}
+age_99 <- NULL
+for (i in 1:99) {
+    age_99[i] <- mean(sample(age, 30, replace = FALSE))
+}
+all_100_a <- age_99 + mean(sample_age)
+mean(all_100_a)
+sd(all_100_a)
+```
+
+## Problem 6: Zombies Killed
+```{r 100 random samples - killed, include=TRUE}
+killed_99 <- NULL
+for (i in 1:99) {
+    killed_99[i] <- mean(sample(killed, 30, replace = FALSE))
+}
+all_100_k <- killed_99 + mean(sample_killed)
+mean(all_100_k)
+sd(all_100_k)
+```
+
+## Problem 6: Years of Education
+```{r 100 random samples - years, include=TRUE}
+years_99 <- NULL
+for (i in 1:99) {
+    years_99[i] <- mean(sample(years_of_education, 30, replace = FALSE))
+}
+all_100_y <- years_99 + mean(sample_years)
+mean(all_100_y)
+sd(all_100_y)
 ```
