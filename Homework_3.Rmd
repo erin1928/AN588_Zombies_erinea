@@ -274,11 +274,9 @@ height_99 <- NULL
 for (i in 1:99) {
     height_99[i] <- mean(sample(height, 30, replace = FALSE))
 }
-all_100 <- height_99 + mean(sample_height)
+all_100 <- c(height_99, mean(sample_height))
 mean(all_100)
 sd(all_100)
-
-#I'm not sure how to best include the past sample
 ```
 
 ## Problem 6: Weight
@@ -287,7 +285,7 @@ weight_99 <- NULL
 for (i in 1:99) {
     weight_99[i] <- mean(sample(weight, 30, replace = FALSE))
 }
-all_100_w <- weight_99 + mean(sample_weight)
+all_100_w <- c(weight_99, mean(sample_weight))
 mean(all_100_w)
 sd(all_100_w)
 ```
@@ -298,7 +296,7 @@ age_99 <- NULL
 for (i in 1:99) {
     age_99[i] <- mean(sample(age, 30, replace = FALSE))
 }
-all_100_a <- age_99 + mean(sample_age)
+all_100_a <- c(age_99, mean(sample_age))
 mean(all_100_a)
 sd(all_100_a)
 ```
@@ -309,7 +307,7 @@ killed_99 <- NULL
 for (i in 1:99) {
     killed_99[i] <- mean(sample(killed, 30, replace = FALSE))
 }
-all_100_k <- killed_99 + mean(sample_killed)
+all_100_k <- c(killed_99, mean(sample_killed))
 mean(all_100_k)
 sd(all_100_k)
 ```
@@ -320,7 +318,7 @@ years_99 <- NULL
 for (i in 1:99) {
     years_99[i] <- mean(sample(years_of_education, 30, replace = FALSE))
 }
-all_100_y <- years_99 + mean(sample_years)
+all_100_y <- c(years_99, mean(sample_years))
 mean(all_100_y)
 sd(all_100_y)
 ```
