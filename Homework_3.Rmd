@@ -12,7 +12,7 @@ output:
   
 ---
 
-!["PLANTS VS. ZOMBIES!!"](/Users/erin/desktop/Newspaper_Zombie.png)
+![PLANTS VS. ZOMBIES!!](/Users/erin/desktop/Newspaper_Zombie.png)
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -187,6 +187,7 @@ qqnorm(zombie_data$years_of_education, main = "Q-Q Plot of Years of Education")
 qqline(zombie_data$years_of_education, col = "red")
 
 ```
+
 ## Problem 4: Height
 ```{r histogram 5, include=TRUE}
 hist_height <- hist(height, main = "Height",
@@ -198,6 +199,7 @@ hist_height
 qqnorm(zombie_data$height, main = "Q-Q Plot of Years of Height")
 qqline(zombie_data$height, col = "red")
 ```
+
 ## Problem 5: Height
 ```{r sample height, include=TRUE}
 sample_height <- sample(height, 30, replace = FALSE)
@@ -210,6 +212,7 @@ lower <- mean_height - qnorm(1 - 0.05/2) * height_sample_stand_error
 upper <- mean_height + qnorm(1 - 0.05/2) * height_sample_stand_error 
 ci_height <- c(lower, upper)
 ci_height
+## I don't know why this chunk isn't included in my final knit
 ```
 
 ## Problem 5: Weight
