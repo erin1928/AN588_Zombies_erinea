@@ -1,0 +1,334 @@
+---
+title: "erinea_FinalHomeworkCode_03"
+author: "Erin Anderson"
+date: "`r Sys.Date()`"
+output: 
+  rmdformats::readthedown:
+    self_contained: true
+    thumbnails: true
+    lightbox: true
+    gallery: false
+    highlight: tango
+  
+---
+
+![PLANTS VS. ZOMBIES!!](/Users/erin/desktop/Newspaper_Zombie.png)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## Challenges
+
+I had a more difficult time with this homework than the last two. Particularly I struggled with Q5 and Q6 as I was having trouble understanding the difference between population and sample standard deviation and mean. I also struggled with including my past sample in the collection of 99 new samples in Q6 and although I worked out the problem, I think there are more efficient ways of doing the same task.
+
+I also struggled with calculating the standard deviation of the population as a whole without the sd() command. Once again I was able to resolve my issue, but think that there is a better way to go about it. I also think I used too many variables as I got lost sometimes remembering which ones to call for specific problems.
+
+
+```{r import csv, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+zombie_data <- read.csv("~/Desktop/zombies.csv", sep = ",", header = TRUE, stringsAsFactors = FALSE)
+zombie_data
+```
+
+## Problem 1: Means
+```{r read csv, include=TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+height <- zombie_data[["height"]]
+weight <- zombie_data[["weight"]]
+killed <- zombie_data[["zombies_killed"]]
+age <- zombie_data[["age"]]
+years_of_education <- zombie_data[["years_of_education"]]
+mean_height <- mean(height)
+mean_height
+mean_weight <- mean(weight)
+mean_weight
+mean_age <- mean(age)
+mean_age
+mean_killed <- mean(killed)
+mean(killed)
+mean_years_of_education <- mean(years_of_education)
+mean_years_of_education
+```
+
+## Problem 1: Standard Deviations
+```{r standard deviation, include=TRUE}
+sum_squared_diff_age <- sum((age - mean_age)^2)
+population_sd_age <- sqrt(sum_squared_diff_age / length(age))
+population_sd_age
+sum_squared_diff_weight <- sum((weight - mean_weight)^2)
+population_sd_weight <- sqrt(sum_squared_diff_weight / length(weight))
+population_sd_weight
+sum_squared_diff_height <- sum((height - mean_height)^2)
+population_sd_height <- sqrt(sum_squared_diff_height / length(height))
+population_sd_height
+sum_squared_diff_killed <- sum((killed - mean_killed)^2)
+population_sd_killed <- sqrt(sum_squared_diff_killed / length(killed))
+population_sd_killed
+sum_squared_diff_years <- sum((years_of_education - mean_years_of_education)^2)
+population_sd_years <- sqrt(sum_squared_diff_years / length(years_of_education))
+population_sd_years
+```
+
+## Problem 2: Age
+```{r boxplot of age, include=TRUE}
+library(ggplot2)
+box_plot <- ggplot(data = zombie_data, aes(x = gender, y = (age)))
+box_plot <- box_plot + geom_boxplot()
+box_plot <- box_plot + theme(axis.text.x = element_text(angle = 90))
+box_plot <- box_plot + ylab("Age") + xlab("Gender")
+box_plot
+```
+
+## Problem 2: Weight
+```{r boxplot of weight, include=TRUE}
+library(ggplot2)
+box_plot_2 <- ggplot(data = zombie_data, aes(x = gender, y = (weight)))
+box_plot_2 <- box_plot_2 + geom_boxplot()
+box_plot_2 <- box_plot_2 + theme(axis.text.x = element_text(angle = 90))
+box_plot_2 <- box_plot_2 + ylab("Weight") + xlab("Gender")
+box_plot_2
+```
+
+## Problem 2: Height
+```{r boxplot of height, include=TRUE}
+library(ggplot2)
+box_plot_3 <- ggplot(data = zombie_data, aes(x = gender, y = (height)))
+box_plot_3 <- box_plot_3 + geom_boxplot()
+box_plot_3 <- box_plot_3 + theme(axis.text.x = element_text(angle = 90))
+box_plot_3 <- box_plot_3 + ylab("Height") + xlab("Gender")
+box_plot_3
+```
+
+## Problem 2: Zombies Killed
+```{r boxplot of kiled, include=TRUE}
+library(ggplot2)
+box_plot_4 <- ggplot(data = zombie_data, aes(x = gender, y = (killed)))
+box_plot_4 <- box_plot_4 + geom_boxplot()
+box_plot_4 <- box_plot_4 + theme(axis.text.x = element_text(angle = 90))
+box_plot_4 <- box_plot_4 + ylab("Zombies Killed") + xlab("Gender")
+box_plot_4
+```
+
+## Problem 2: Years of Education
+```{r boxplot of years, include=TRUE}
+library(ggplot2)
+box_plot_5 <- ggplot(data = zombie_data, aes(x = gender, y = (years_of_education)))
+box_plot_5 <- box_plot_5 + geom_boxplot()
+box_plot_5 <- box_plot_5 + theme(axis.text.x = element_text(angle = 90))
+box_plot_5 <- box_plot_5 + ylab("Years of Education") + xlab("Gender")
+box_plot_5
+```
+
+## Problem 3: Height and Age
+```{r scatterplot 1, include=TRUE}
+scatterplot <- ggplot(data = zombie_data, aes(x = age, y = height))
+scatterplot <- scatterplot + geom_point()
+scatterplot <- scatterplot + geom_smooth(method = "lm")
+scatterplot
+```
+
+## Problem 3: Weight and Age
+```{r scatterplot 2, include=TRUE}
+scatterplot_2 <- ggplot(data = zombie_data, aes(x = age, y = weight))
+scatterplot_2 <- scatterplot_2 + geom_point()
+scatterplot_2 <- scatterplot_2 + geom_smooth(method = "lm")
+scatterplot_2
+```
+
+## Problem 3: Weight and Height
+```{r scatterplot 3, include=TRUE}
+scatterplot_3 <- ggplot(data = zombie_data, aes(x = age, y = weight))
+scatterplot_3 <- scatterplot_3 + geom_point()
+scatterplot_3 <- scatterplot_3 + geom_smooth(method = "lm")
+scatterplot_3
+```
+
+## Problem 4: Age
+```{r histogram 1, include=TRUE}
+hist_age <- hist(age, main = "Age",
+    xlab = "Age", xlim = c(10,30))
+hist_age
+```
+```{r qqplot 1, include=TRUE}
+qqnorm(zombie_data$age, main = "Q-Q Plot of Age")
+qqline(zombie_data$age, col = "red")
+
+```
+This relationship looks linear!
+
+
+## Problem 4: Weight
+```{r histogram 2, include=TRUE}
+hist_weight <- hist(weight, main = "Weight",
+    xlab = "Weight", xlim = c(100,250))
+hist_weight
+```
+```{r qqplot 2, include=TRUE}
+qqnorm(zombie_data$weight, main = "Q-Q Plot of Weight")
+qqline(zombie_data$weight, col = "red")
+
+```
+This relationahip looks linear!
+
+## Problem 4: Zombies Killed
+```{r histogram 3, include=TRUE}
+hist_killed <- hist(killed, main = " Zombies Killed",
+    xlab = "Zombies Killed", xlim = c(0,12))
+hist_killed
+```
+```{r qqplot 3, include=TRUE}
+qqnorm(zombie_data$zombies_killed, main = "Q-Q Plot of Zombies Killed")
+qqline(zombie_data$zombies_killed, col = "red")
+```
+This relationship is not a normal distribution.
+
+## Problem 4: Years of Education
+```{r histogram 4, include=TRUE}
+hist_years <- hist(years_of_education, main = "Years of Education",
+    xlab = "Years of Education", xlim = c(0,10))
+hist_years
+```
+```{r qqplot 4, include=TRUE}
+qqnorm(zombie_data$years_of_education, main = "Q-Q Plot of Years of Education")
+qqline(zombie_data$years_of_education, col = "red")
+
+```
+
+## Problem 4: Height
+```{r histogram 5, include=TRUE}
+hist_height <- hist(height, main = "Height",
+    xlab = "Height", xlim = c(50,90))
+hist_height
+```
+
+```{r ggplot 5, include=TRUE}
+qqnorm(zombie_data$height, main = "Q-Q Plot of Years of Height")
+qqline(zombie_data$height, col = "red")
+```
+This relationship looks linear
+
+
+## Problem 5: Height
+```{r sample height, include=TRUE}
+sample_height <- sample(height, 30, replace = FALSE)
+mean(sample_height)
+standard_dev_height <- sd(sample_height)
+standard_dev_height
+height_sample_stand_error <- standard_dev_height/sqrt(30)
+height_sample_stand_error
+lower <- mean_height - qnorm(1 - 0.05/2) * height_sample_stand_error
+upper <- mean_height + qnorm(1 - 0.05/2) * height_sample_stand_error 
+ci_height <- c(lower, upper)
+ci_height
+## I don't know why this chunk isn't included in my final knit
+```
+
+## Problem 5: Weight
+```{r sample weight, include=TRUE}
+sample_weight <- sample(weight, 30, replace = FALSE)
+mean(sample_weight)
+standard_dev_weight <- sd(sample_weight)
+standard_dev_weight
+weight_sample_stand_error <- standard_dev_weight/sqrt(30)
+weight_sample_stand_error
+lower_weight <- mean_weight - qnorm(1 - 0.05/2) * weight_sample_stand_error
+upper_weight <- mean_weight + qnorm(1 - 0.05/2) * weight_sample_stand_error 
+ci_weight <- c(lower_weight, upper_weight)
+ci_weight
+```
+
+## Problem 5: Age
+```{r sample age, include=TRUE}
+sample_age <- sample(age, 30, replace = FALSE)
+mean(sample_age)
+standard_dev_age <- sd(sample_age)
+standard_dev_age
+age_sample_stand_error <- standard_dev_age/sqrt(30)
+age_sample_stand_error
+lower_age <- mean_age - qnorm(1 - 0.05/2) * age_sample_stand_error
+upper_age <- mean_age + qnorm(1 - 0.05/2) * age_sample_stand_error 
+ci_age <- c(lower_age, upper_age)
+ci_age
+```
+
+## Problem 5: Zombies Killed
+```{r sample killed, include=TRUE}
+sample_killed <- sample(killed, 30, replace = FALSE)
+mean(sample_killed)
+standard_dev_killed <- sd(sample_killed)
+standard_dev_killed
+killed_sample_stand_error <- standard_dev_killed/sqrt(30)
+killed_sample_stand_error
+lower_killed <- mean_killed - qnorm(1 - 0.05/2) * killed_sample_stand_error
+upper_killed <- mean_killed + qnorm(1 - 0.05/2) * killed_sample_stand_error 
+ci_killed <- c(lower_killed, upper_killed)
+ci_killed
+```
+
+## Problem 5: Years of Education
+```{r sample education, include=TRUE}
+sample_years <- sample(years_of_education, 30, replace = FALSE)
+mean(sample_years)
+standard_dev_years <- sd(sample_years)
+standard_dev_years
+years_sample_stand_error <- standard_dev_years/sqrt(30)
+years_sample_stand_error
+lower_years <- mean_years_of_education - qnorm(1 - 0.05/2) * years_sample_stand_error
+upper_years <- mean_years_of_education + qnorm(1 - 0.05/2) * years_sample_stand_error 
+ci_years <- c(lower_years, upper_years)
+ci_years
+```
+
+## Problem 6: Height
+```{r 100 random samples - height, include=TRUE}
+height_99 <- NULL
+for (i in 1:99) {
+    height_99[i] <- mean(sample(height, 30, replace = FALSE))
+}
+all_100 <- c(height_99, mean(sample_height))
+mean(all_100)
+sd(all_100)
+```
+
+## Problem 6: Weight
+```{r 100 random samples -weight, include=TRUE}
+weight_99 <- NULL
+for (i in 1:99) {
+    weight_99[i] <- mean(sample(weight, 30, replace = FALSE))
+}
+all_100_w <- c(weight_99, mean(sample_weight))
+mean(all_100_w)
+sd(all_100_w)
+```
+
+## Problem 6: Age
+```{r 100 random samples - age, include=TRUE}
+age_99 <- NULL
+for (i in 1:99) {
+    age_99[i] <- mean(sample(age, 30, replace = FALSE))
+}
+all_100_a <- c(age_99, mean(sample_age))
+mean(all_100_a)
+sd(all_100_a)
+```
+
+## Problem 6: Zombies Killed
+```{r 100 random samples - killed, include=TRUE}
+killed_99 <- NULL
+for (i in 1:99) {
+    killed_99[i] <- mean(sample(killed, 30, replace = FALSE))
+}
+all_100_k <- c(killed_99, mean(sample_killed))
+mean(all_100_k)
+sd(all_100_k)
+```
+
+## Problem 6: Years of Education
+```{r 100 random samples - years, include=TRUE}
+years_99 <- NULL
+for (i in 1:99) {
+    years_99[i] <- mean(sample(years_of_education, 30, replace = FALSE))
+}
+all_100_y <- c(years_99, mean(sample_years))
+mean(all_100_y)
+sd(all_100_y)
+```
