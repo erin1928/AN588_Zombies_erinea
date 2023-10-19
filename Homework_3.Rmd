@@ -153,6 +153,8 @@ qqnorm(zombie_data$age, main = "Q-Q Plot of Age")
 qqline(zombie_data$age, col = "red")
 
 ```
+This relationship looks linear!
+
 
 ## Problem 4: Weight
 ```{r histogram 2, include=TRUE}
@@ -165,6 +167,7 @@ qqnorm(zombie_data$weight, main = "Q-Q Plot of Weight")
 qqline(zombie_data$weight, col = "red")
 
 ```
+This relationahip looks linear!
 
 ## Problem 4: Zombies Killed
 ```{r histogram 3, include=TRUE}
@@ -176,6 +179,8 @@ hist_killed
 qqnorm(zombie_data$zombies_killed, main = "Q-Q Plot of Zombies Killed")
 qqline(zombie_data$zombies_killed, col = "red")
 ```
+This relationship is not a normal distribution.
+
 ## Problem 4: Years of Education
 ```{r histogram 4, include=TRUE}
 hist_years <- hist(years_of_education, main = "Years of Education",
@@ -199,6 +204,8 @@ hist_height
 qqnorm(zombie_data$height, main = "Q-Q Plot of Years of Height")
 qqline(zombie_data$height, col = "red")
 ```
+This relationship looks linear
+
 
 ## Problem 5: Height
 ```{r sample height, include=TRUE}
